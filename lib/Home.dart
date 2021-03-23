@@ -49,21 +49,31 @@ class _HomeState extends State<Home> {
       ),
       body: Container(),
       bottomNavigationBar: BottomNavigationBar(
+        //Mudanca
+        currentIndex: 2,
         //Precisamos definir uma lista de widgets
         fixedColor: Colors.red,
-        
-        type: BottomNavigationBarType.fixed,
+        //Deixar um cor fixa ate 3, mas ate 4 muda para shifting
+        type: BottomNavigationBarType.shifting,
         items: [
           BottomNavigationBarItem(
+            backgroundColor: Colors.orange,
             label: "Home",
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
+            backgroundColor: Colors.red,
             label: "Lastest",
             icon: Icon(Icons.whatshot),
           ),
           BottomNavigationBarItem(
-            label: "Home",
+            backgroundColor: Colors.blue,
+            label: "Subscribe",
+            icon: Icon(Icons.home),
+          ),
+          BottomNavigationBarItem(
+            backgroundColor: Colors.green,
+            label: "Library",
             icon: Icon(Icons.home),
           ),
         ],
