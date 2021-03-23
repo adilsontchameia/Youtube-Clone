@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:youtube/Home.dart';
 
 void main() {
-  runApp(
-    Home(),
-  );
+  runApp(MaterialApp(
+    home: Home(),
+    //Desabilitar o banner de DEBUG
+    debugShowCheckedModeBanner: false,
+  ));
 }
