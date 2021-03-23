@@ -13,8 +13,14 @@ class _HomeState extends State<Home> {
         //Define cor padrao para os icones
         iconTheme: IconThemeData(
           color: Colors.grey,
-          opacity: 1),
-        title: Text("Youtube"),
+          //0.2 / 1 / 0*
+          //opacity: 1,
+        ),
+        title: Image.asset(
+          "images/youtube.png",
+          width: 95,
+          height: 30,
+        ),
         backgroundColor: Colors.white,
         //Acoes/Podem ser widgets
         actions: [
