@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:youtube/Telas/Biblioteca.dart';
+import 'package:youtube/Telas/EmAlta.dart';
+import 'package:youtube/Telas/Inicio.dart';
+import 'package:youtube/Telas/Inscricao.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -11,12 +15,12 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    //Lista de Widgets
+    //Lista de Widgets (telas)
     List<Widget> telas = [
-      Text("Home"),
-      Text("Lastest"),
-      Text("Subscribe"),
-      Text("Library"),
+      Inicio(),
+      EmAlta(),
+      Inscricao(),
+      Biblioteca(),
     ];
     return Scaffold(
       appBar: AppBar(
@@ -57,7 +61,7 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-      //Configurar para tela mudar com 
+      //Configurar para tela mudar com
       body: telas[_indiceAtual],
       bottomNavigationBar: BottomNavigationBar(
         //Mudanca
@@ -74,22 +78,22 @@ class _HomeState extends State<Home> {
         items: [
           BottomNavigationBarItem(
             //backgroundColor: Colors.orange,
-            label: "Home",
+            label: "Inicio",
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
             //backgroundColor: Colors.red,
-            label: "Lastest",
+            label: "Em Alta",
             icon: Icon(Icons.whatshot),
           ),
           BottomNavigationBarItem(
             //backgroundColor: Colors.blue,
-            label: "Subscribe",
+            label: "Inscricao",
             icon: Icon(Icons.subscriptions),
           ),
           BottomNavigationBarItem(
             //backgroundColor: Colors.green,
-            label: "Library",
+            label: "Biblioteca",
             icon: Icon(Icons.folder),
           ),
         ],

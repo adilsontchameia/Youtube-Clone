@@ -9,7 +9,9 @@ class _InscricaoState extends State<Inscricao> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
+      child: Center(
+        child: Text("Inscricao"),
+      ),
     );
   }
 }
