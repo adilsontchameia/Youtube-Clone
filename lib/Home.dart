@@ -6,6 +6,9 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  //Indice da bottomBar
+  int _indiceAtual = 0;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,11 +53,16 @@ class _HomeState extends State<Home> {
       body: Container(),
       bottomNavigationBar: BottomNavigationBar(
         //Mudanca
-        currentIndex: 2,
+        currentIndex: _indiceAtual,
+        onTap: (indice) {
+          setState(() {
+            _indiceAtual = indice;
+          });
+        },
         //Precisamos definir uma lista de widgets
+        type: BottomNavigationBarType.fixed,
         fixedColor: Colors.red,
         //Deixar um cor fixa ate 3, mas ate 4 muda para shifting
-        type: BottomNavigationBarType.shifting,
         items: [
           BottomNavigationBarItem(
             backgroundColor: Colors.orange,
@@ -69,12 +77,12 @@ class _HomeState extends State<Home> {
           BottomNavigationBarItem(
             backgroundColor: Colors.blue,
             label: "Subscribe",
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.subscriptions),
           ),
           BottomNavigationBarItem(
             backgroundColor: Colors.green,
             label: "Library",
-            icon: Icon(Icons.home),
+            icon: Icon(Icons.folder),
           ),
         ],
       ),
