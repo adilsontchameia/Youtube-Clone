@@ -11,6 +11,13 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    //Lista de Widgets
+    List<Widget> telas = [
+      Text("Home"),
+      Text("Lastest"),
+      Text("Subscribe"),
+      Text("Library"),
+    ];
     return Scaffold(
       appBar: AppBar(
         //Define cor padrao para os icones
@@ -50,7 +57,8 @@ class _HomeState extends State<Home> {
           )
         ],
       ),
-      body: Container(),
+      //Configurar para tela mudar com 
+      body: telas[_indiceAtual],
       bottomNavigationBar: BottomNavigationBar(
         //Mudanca
         currentIndex: _indiceAtual,
@@ -65,22 +73,22 @@ class _HomeState extends State<Home> {
         //Deixar um cor fixa ate 3, mas ate 4 muda para shifting
         items: [
           BottomNavigationBarItem(
-            backgroundColor: Colors.orange,
+            //backgroundColor: Colors.orange,
             label: "Home",
             icon: Icon(Icons.home),
           ),
           BottomNavigationBarItem(
-            backgroundColor: Colors.red,
+            //backgroundColor: Colors.red,
             label: "Lastest",
             icon: Icon(Icons.whatshot),
           ),
           BottomNavigationBarItem(
-            backgroundColor: Colors.blue,
+            //backgroundColor: Colors.blue,
             label: "Subscribe",
             icon: Icon(Icons.subscriptions),
           ),
           BottomNavigationBarItem(
-            backgroundColor: Colors.green,
+            //backgroundColor: Colors.green,
             label: "Library",
             icon: Icon(Icons.folder),
           ),
