@@ -48,6 +48,26 @@ class _HomeState extends State<Home> {
         ],
       ),
       body: Container(),
+      bottomNavigationBar: BottomNavigationBar(
+        //Precisamos definir uma lista de widgets
+        fixedColor: Colors.red,
+        
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+            label: "Home",
+            icon: Icon(Icons.home),
+          ),
+          BottomNavigationBarItem(
+            label: "Lastest",
+            icon: Icon(Icons.whatshot),
+          ),
+          BottomNavigationBarItem(
+            label: "Home",
+            icon: Icon(Icons.home),
+          ),
+        ],
+      ),
     );
   }
 }
