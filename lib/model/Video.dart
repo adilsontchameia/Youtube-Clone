@@ -8,6 +8,15 @@ class Video {
   //Construtor
   Video({this.id, this.titulo, this.descricao, this.imagem, this.canal});
 
+  //Metodo para converter video
+  static converterJson(Map<String, dynamic> json){
+  
+  }
+
+  static Video.fromJson(Map<String, dynamic> json) {
+    return Video();
+  }
+
   //Getters e Setters
   String get getId => this.id;
 

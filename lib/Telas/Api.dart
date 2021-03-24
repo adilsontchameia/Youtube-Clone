@@ -24,12 +24,18 @@ class Api {
       Map<String, dynamic> dadosJson = json.decode(response.body);
 
       //Lista de Videos
-      //List<Video> videos = dadosJson["items"];
+      //Tem objetos
+      //Outro metodo de percorrer
+      List<Video> videos = dadosJson["items"].map<Video>((map) {
+        //Retornar os videos convertidos
+        return Video.fromJson(map);
+      });
 
       //Percorrer os videos
-      for (var video in dadosJson["items"]) {
+      /*for (var video in dadosJson["items"]) {
         print("resultado: " + video.toString());
       }
+      */
 
       //print(
       // "resultado: " + dadosJson["items"][4]["snippet"]["title"].toString());
