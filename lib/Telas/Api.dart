@@ -18,12 +18,14 @@ class Api {
             "&channelId=$ID_CANAL"
             "&q=$pesquisa");
     //Validando codigos da requisicao
-    if (response.statusCode == 200) {
-      //print("Resultado:" + response.body);
-      //Tivemos como retorno o MAP, e vamos pegar
-      Map<String, dynamic> dadosJson = json.decode(response.body);
-      //Com isso podemos pegar alguns itens
-      print("Resultado:" + dadosJson["pageInfo"]);
-    } else {}
+ if( response.statusCode == 200 ){
+
+
+      Map<String, dynamic> dadosJson = json.decode( response.body );
+      print("resultado: " + dadosJson["items"][4]["snippet"]["title"].toString() );
+
+    }else{
+
+    }
   }
 }
