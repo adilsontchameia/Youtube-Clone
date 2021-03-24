@@ -30,7 +30,11 @@ class Api {
         //Retornar os videos convertidos
         return Video.fromJson(map);
         //return Video.converterJson(map);
-      });
+      }).toList;
+
+      for (var video in videos) {
+        print("Resultado " + video.titulo);
+      }
 
       //Percorrer os videos
       /*for (var video in dadosJson["items"]) {
