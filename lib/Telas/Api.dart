@@ -8,24 +8,22 @@ const URL_BASE = "https://www.googleapis.com/youtube/v3/";
 //Metodos da API
 class Api {
   pesquisar(String pesquisa) async {
-    http.Response response;
-    response = await http.get(
-      Uri.parse(URL_BASE +
-          "search"
-              //Dados dos videos
-              //? apenas no primeiro paramentro
-              "?part=snippet"
-              //& - url
-              "&type"
-              "&maxResults=20"
-              "&order=date"
-              "&key=$CHAVE_YOUTUBE_API"
-              "&channelId=$ID_CANAL"
-              "&q=$pesquisa"),
-    );
+    http.Response response = await http.get(URL_BASE +
+        "search"
+            "?part=snippet"
+            "&type=video"
+            "&maxResults=20"
+            "&order=date"
+            "&key=$CHAVE_YOUTUBE_API"
+            "&channelId=$ID_CANAL"
+            "&q=$pesquisa");
     //Validando codigos da requisicao
     if (response.statusCode == 200) {
-      print("Resultado:" + response.body);
+      //print("Resultado:" + response.body);
+      //Tivemos como retorno o MAP, e vamos pegar
+      Map<String, dynamic> dadosJson = json.decode(response.body);
+      //Com isso podemos pegar alguns itens
+      print("Resultado:" + dadosJson["pageInfo"]);
     } else {}
   }
 }
