@@ -1,6 +1,8 @@
 import 'package:http/http.dart' as http;
 import 'dart:convert';
 
+import 'package:youtube/model/Video.dart';
+
 const CHAVE_YOUTUBE_API = "AIzaSyASz0-iM-pLZ7d5vQnjzvNmCBA5ltbYe5k";
 const ID_CANAL = "UCzyS5aq4oma80c1cJ5z7yig";
 const URL_BASE = "https://www.googleapis.com/youtube/v3/";
@@ -20,8 +22,17 @@ class Api {
     //Validando codigos da requisicao
     if (response.statusCode == 200) {
       Map<String, dynamic> dadosJson = json.decode(response.body);
-      print(
-          "resultado: " + dadosJson["items"][4]["snippet"]["title"].toString());
+
+      //Lista de Videos
+      //List<Video> videos = dadosJson["items"];
+
+      //Percorrer os videos
+      for (var video in dadosJson["items"]) {
+        print("resultado: " + video.toString());
+      }
+
+      //print(
+      // "resultado: " + dadosJson["items"][4]["snippet"]["title"].toString());
     } else {}
   }
 }
