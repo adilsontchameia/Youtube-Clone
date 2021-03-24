@@ -23,5 +23,9 @@ class Api {
               "&channelId=$ID_CANAL"
               "&q=$pesquisa"),
     );
+    //Validando codigos da requisicao
+    if (response.statusCode == 200) {
+      print("Resultado:" + response.body);
+    } else {}
   }
 }

@@ -17,6 +17,7 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     //Lista de Widgets (telas)
     List<Widget> telas = [
+      
       Inicio(),
       EmAlta(),
       Inscricao(),
