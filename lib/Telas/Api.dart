@@ -9,11 +9,19 @@ const URL_BASE = "https://www.googleapis.com/youtube/v3/";
 class Api {
   pesquisar(String pesquisa) async {
     http.Response response;
-    response = await http.get(Uri.parse(
-      URL_BASE + "search"
-      //Dados dos videos
-      "?part=snippet"
-      ""
-      ));
+    response = await http.get(
+      Uri.parse(URL_BASE +
+          "search"
+              //Dados dos videos
+              //? apenas no primeiro paramentro
+              "?part=snippet"
+              //& - url
+              "&type"
+              "&maxResults=20"
+              "&order=date"
+              "&key=$CHAVE_YOUTUBE_API"
+              "&channelId=$ID_CANAL"
+              "&q=$pesquisa"),
+    );
   }
 }
