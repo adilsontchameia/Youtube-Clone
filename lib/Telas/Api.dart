@@ -28,8 +28,8 @@ class Api {
       //Outro metodo de percorrer
       List<Video> videos = dadosJson["items"].map<Video>((map) {
         //Retornar os videos convertidos
-        //return Video.fromJson(map);
-        return Video.converterJson(map);
+        return Video.fromJson(map);
+        //return Video.converterJson(map);
       });
 
       //Percorrer os videos

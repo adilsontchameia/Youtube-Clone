@@ -9,6 +9,7 @@ class Video {
   Video({this.id, this.titulo, this.descricao, this.imagem, this.canal});
 
   //Metodo para converter video
+  /*
   static converterJson(Map<String, dynamic> json){
   return Video(
   id: json["id"] ["videoId"],
@@ -17,9 +18,15 @@ class Video {
     canal: json["snippet"] ["channelId"],
   );
   }
-
-  static Video.fromJson(Map<String, dynamic> json) {
-    return Video();
+  */
+  //Factory, retorna um unico objecto.
+  factory Video.fromJson(Map<String, dynamic> json) {
+      return Video(
+  id: json["id"] ["videoId"],
+  titulo: json["snippet"] ["title"],
+  imagem: json["snippet"] ["thumbnails"] ["high"] ["url"],
+    canal: json["snippet"] ["channelId"],
+  );
   }
 
   //Getters e Setters
