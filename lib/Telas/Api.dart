@@ -18,14 +18,10 @@ class Api {
             "&channelId=$ID_CANAL"
             "&q=$pesquisa");
     //Validando codigos da requisicao
- if( response.statusCode == 200 ){
-
-
-      Map<String, dynamic> dadosJson = json.decode( response.body );
-      print("resultado: " + dadosJson["items"][4]["snippet"]["title"].toString() );
-
-    }else{
-
-    }
+    if (response.statusCode == 200) {
+      Map<String, dynamic> dadosJson = json.decode(response.body);
+      print(
+          "resultado: " + dadosJson["items"][4]["snippet"]["title"].toString());
+    } else {}
   }
 }
