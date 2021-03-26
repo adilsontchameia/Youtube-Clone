@@ -41,6 +41,19 @@ class CustomSearchDelegate extends SearchDelegate<String> {
   @override
   Widget buildSuggestions(BuildContext context) {
     print("Resultado digitado: " + query);
-    return Container();
+    List<String> lista = List.empty();
+    if (query.isNotEmpty) {
+      lista = ["Braulio", "Eliezer", "Gonza", "Yago"]
+          //WHERE vai pegar os resultados, comparar se comeca com uma letra do texto
+          .where((texto) => texto.startsWith(query)).toList();
+      return ListView.builder(
+        itemCount: lista.length,
+        itemBuilder: (context, index) {
+          return ListTile(title: Text(lista[index]));
+        },
+      );
+    } else {
+      print("Sem resultado para pesquisa");
+    }
   }
 }
