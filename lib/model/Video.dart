@@ -19,11 +19,12 @@ class Video {
   );
   }
   */
-  //Factory, retorna um unico objecto.
+  //Factory, retorna um unico objecto da API.
   factory Video.fromJson(Map<String, dynamic> json) {
     return Video(
       id: json["id"]["videoId"],
       titulo: json["snippet"]["title"],
+      descricao: json["snippet"]["description"],
       imagem: json["snippet"]["thumbnails"]["high"]["url"],
       canal: json["snippet"]["channelId"],
     );

@@ -47,10 +47,17 @@ class _InicioState extends State<Inicio> {
                       Container(
                         height: 200,
                         decoration: BoxDecoration(
-                            image: DecorationImage(
-                                fit: BoxFit.cover,
-                                //Pegando imagem da internet
-                                image: NetworkImage(video.imagem))),
+                          image: DecorationImage(
+                            fit: BoxFit.cover,
+                            //Pegando imagem da internet
+                            image: NetworkImage(video.imagem),
+                          ),
+                        ),
+                      ),
+                      //Retornar listagem dos titulos
+                      ListTile(
+                        title: Text(video.titulo),
+                        subtitle: Text(video.canal),
                       )
                     ],
                   );
