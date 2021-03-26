@@ -3,6 +3,9 @@ import 'package:youtube/Telas/Api.dart';
 import 'package:youtube/model/Video.dart';
 
 class Inicio extends StatefulWidget {
+  //String que sera recebida como pesquisa
+  String pesquisa;
+  Inicio(this.pesquisa);
   @override
   _InicioState createState() => _InicioState();
 }
@@ -22,7 +25,7 @@ class _InicioState extends State<Inicio> {
     //Instanciar API, para executar no app
 
     return FutureBuilder<List<Video>>(
-      future: _listarVideos(""),
+      future: _listarVideos(widget.pesquisa),
       builder: (context, snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.none:
