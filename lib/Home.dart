@@ -41,15 +41,7 @@ class _HomeState extends State<Home> {
           //Icones com funcao de botao
           IconButton(
             onPressed: () {
-              print("VideoCam");
-            },
-            icon: Icon(
-              Icons.videocam,
-            ),
-          ),
-          IconButton(
-            onPressed: () {
-              print("search");
+              showSearch(context: context, delegate: delegate);
             },
             icon: Icon(Icons.search),
           ),
