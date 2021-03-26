@@ -41,8 +41,8 @@ class _HomeState extends State<Home> {
         actions: [
           //Icones com funcao de botao
           IconButton(
-            onPressed: () {
-              showSearch(context: context, delegate: CustomSearchDelegate());
+            onPressed: () async {
+            String resultado = await showSearch(context: context, delegate: CustomSearchDelegate());
             },
             icon: Icon(Icons.search),
           ),

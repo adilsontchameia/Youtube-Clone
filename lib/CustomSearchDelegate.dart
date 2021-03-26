@@ -31,7 +31,9 @@ class CustomSearchDelegate extends SearchDelegate<String> {
   //Controla os resultados pesquisados
   @override
   Widget buildResults(BuildContext context) {
-    print("Pesquisa realizada");
+    //Fechando a janela, mas pegado o que foid digitado(query).
+    close(context, query);
+    //print("Pesquisa realizada");
     return Container();
   }
 
