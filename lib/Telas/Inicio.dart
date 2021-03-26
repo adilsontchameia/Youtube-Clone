@@ -9,12 +9,12 @@ class Inicio extends StatefulWidget {
 
 class _InicioState extends State<Inicio> {
   //Metodo para listar videos
-  _listarVideos() {
+  _listarVideos(String pesquisar) {
     Future<List<Video>> videos;
 
     Api api = Api();
     //Retornar os videos
-    return api.pesquisar("");
+    return api.pesquisar(pesquisar);
   }
 
   @override
@@ -22,7 +22,7 @@ class _InicioState extends State<Inicio> {
     //Instanciar API, para executar no app
 
     return FutureBuilder<List<Video>>(
-      future: _listarVideos(),
+      future: _listarVideos(""),
       builder: (context, snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.none:
