@@ -28,7 +28,10 @@ class _InicioState extends State<Inicio> {
           case ConnectionState.none:
           case ConnectionState.waiting:
             //Colocar um indicador de progresso
-            return Center(child: CircularProgressIndicator());
+            return Center(
+                child: CircularProgressIndicator(
+              backgroundColor: Colors.red,
+            ));
             break;
           case ConnectionState.active:
           case ConnectionState.done:
@@ -57,7 +60,7 @@ class _InicioState extends State<Inicio> {
                       //Retornar listagem dos titulos
                       ListTile(
                         title: Text(video.titulo),
-                        subtitle: Text(video.canal),
+                        subtitle: Text(video.descricao),
                       )
                     ],
                   );

@@ -8,6 +8,7 @@ class CustomSearchDelegate extends SearchDelegate<String> {
     return [
       //Botao de apagar
       IconButton(icon: Icon(Icons.clear), onPressed: () {}),
+      //IconButton(icon: Icon(Icons.done), onPressed: () {}),
     ];
   }
 
