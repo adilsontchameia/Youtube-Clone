@@ -17,7 +17,6 @@ class _HomeState extends State<Home> {
   Widget build(BuildContext context) {
     //Lista de Widgets (telas)
     List<Widget> telas = [
-      
       Inicio(),
       EmAlta(),
       Inscricao(),
@@ -63,7 +62,12 @@ class _HomeState extends State<Home> {
         ],
       ),
       //Configurar para tela mudar com
-      body: telas[_indiceAtual],
+      body: Container(
+        //Padding para todas telas a serem carregadas
+        padding: EdgeInsets.all(16),
+        //Telas
+        child: telas[_indiceAtual],
+      ),
       bottomNavigationBar: BottomNavigationBar(
         //Mudanca
         currentIndex: _indiceAtual,
