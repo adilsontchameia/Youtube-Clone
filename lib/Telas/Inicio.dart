@@ -39,7 +39,11 @@ class _InicioState extends State<Inicio> {
                   //Exibindo na tela
                   //Vou retornar numa coluna
                   return Column(
-                    children: [Text("Testes" + index.toString())],
+                    children: [
+                      Text(
+                        "Testes" + index.toString(),
+                      ),
+                    ],
                   );
                 },
                 separatorBuilder: (context, index) => Divider(
