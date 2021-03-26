@@ -27,10 +27,9 @@ class Api {
       //Tem objetos
       //Outro metodo de percorrer
       List<Video> videos = dadosJson["items"].map<Video>((map) {
-        //Retornar os videos convertidos
         return Video.fromJson(map);
         //return Video.converterJson(map);
-      }).toList;
+      }).toList();
 
       //Retornar os videos
       return videos;
