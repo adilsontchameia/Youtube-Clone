@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:youtube/CustomSearchDelegate.dart';
 import 'package:youtube/Telas/Biblioteca.dart';
 import 'package:youtube/Telas/EmAlta.dart';
 import 'package:youtube/Telas/Inicio.dart';
@@ -41,7 +42,7 @@ class _HomeState extends State<Home> {
           //Icones com funcao de botao
           IconButton(
             onPressed: () {
-              showSearch(context: context, delegate: null);
+              showSearch(context: context, delegate: CustomSearchDelegate());
             },
             icon: Icon(Icons.search),
           ),
