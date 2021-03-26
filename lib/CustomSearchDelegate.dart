@@ -31,12 +31,14 @@ class CustomSearchDelegate extends SearchDelegate<String> {
   //Controla os resultados pesquisados
   @override
   Widget buildResults(BuildContext context) {
+    print("Pesquisa realizada");
     return Container();
   }
 
   //Mostra sugestoes de pesquisa
   @override
   Widget buildSuggestions(BuildContext context) {
+    print("Resultado digitado: " + query);
     return Container();
   }
 }
