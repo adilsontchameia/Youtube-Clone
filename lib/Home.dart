@@ -42,7 +42,10 @@ class _HomeState extends State<Home> {
           //Icones com funcao de botao
           IconButton(
             onPressed: () async {
-            String resultado = await showSearch(context: context, delegate: CustomSearchDelegate());
+              String resultado = await showSearch(
+                  context: context, delegate: CustomSearchDelegate());
+              //Teste de resultado digitado
+              print("Resultado: " + resultado);
             },
             icon: Icon(Icons.search),
           ),
