@@ -36,19 +36,28 @@ class _InicioState extends State<Inicio> {
               //Retornar os videos numa lista
               return ListView.separated(
                 itemBuilder: (context, index) {
+                  //Recuperar lista antes de chamar coluna
+                  List<Video> videos = snapshot.data;
+                  Video video = videos[index];
                   //Exibindo na tela
                   //Vou retornar numa coluna
                   return Column(
                     children: [
-                      Text(
-                        "Testes" + index.toString(),
-                      ),
+                      //Estrutura de Video
+                      Container(
+                        height: 200,
+                        decoration: BoxDecoration(
+                            image: DecorationImage(
+                                fit: BoxFit.cover,
+                                //Pegando imagem da internet
+                                image: NetworkImage(video.imagem))),
+                      )
                     ],
                   );
                 },
                 separatorBuilder: (context, index) => Divider(
                   height: 3,
-                  color: Colors.red,
+                  color: Colors.grey,
                 ),
                 itemCount: (snapshot.data.length),
               );
