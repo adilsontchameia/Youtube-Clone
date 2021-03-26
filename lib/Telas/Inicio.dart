@@ -27,9 +27,32 @@ class _InicioState extends State<Inicio> {
         switch (snapshot.connectionState) {
           case ConnectionState.none:
           case ConnectionState.waiting:
+            //Colocar um indicador de progresso
+            return Center(child: CircularProgressIndicator());
             break;
-          case ConnectionState.none:
-          case ConnectionState.none:
+          case ConnectionState.active:
+          case ConnectionState.done:
+            if (snapshot.hasData) {
+              //Retornar os videos numa lista
+              return ListView.separated(
+                itemBuilder: (context, index) {
+                  //Exibindo na tela
+                  //Vou retornar numa coluna
+                  return Column(
+                    children: [Text("Testes" + index.toString())],
+                  );
+                },
+                separatorBuilder: (context, index) => Divider(
+                  height: 3,
+                  color: Colors.red,
+                ),
+                itemCount: (snapshot.data.length),
+              );
+            } else {
+              return Center(
+                child: Text("Nenhum dados a ser exibido"),
+              );
+            }
             break;
         }
       },
