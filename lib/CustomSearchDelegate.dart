@@ -24,7 +24,7 @@ class CustomSearchDelegate extends SearchDelegate<String> {
         icon: Icon(Icons.arrow_back_ios),
         onPressed: () {
           //Quando fechamos, podemos passar um parametro depois do context
-          close(context, null);
+          close(context, "");
         });
   }
 

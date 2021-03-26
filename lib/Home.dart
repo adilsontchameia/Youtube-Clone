@@ -13,13 +13,14 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   //Indice da bottomBar
   int _indiceAtual = 0;
+  //Strinf de pesquisa
+  String _resultado = "";
 
   @override
   Widget build(BuildContext context) {
-    String _resultado = "";
     //Lista de Widgets (telas)
     List<Widget> telas = [
-      Inicio(),
+      Inicio(_resultado),
       EmAlta(),
       Inscricao(),
       Biblioteca(),
