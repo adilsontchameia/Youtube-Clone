@@ -13,7 +13,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   //Indice da bottomBar
   int _indiceAtual = 0;
-  //Strinf de pesquisa
+  //String de pesquisa
   String _resultado = "";
 
   @override

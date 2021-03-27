@@ -50,7 +50,12 @@ class CustomSearchDelegate extends SearchDelegate<String> {
       return ListView.builder(
         itemCount: lista.length,
         itemBuilder: (context, index) {
-          return ListTile(title: Text(lista[index]));
+          return ListTile(
+              onTap: () {
+                //Conseguimos saber o item selecionado
+                close(context, lista[index]);
+              },
+              title: Text(lista[index]));
         },
       );
     } else {
