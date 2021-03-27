@@ -52,7 +52,11 @@ class _InicioState extends State<Inicio> {
                     onTap: () {
                       //Executar os videos
                       FlutterYoutube.playYoutubeVideoById(
-                          apiKey: CHAVE_YOUTUBE_API, videoId: video.id);
+                          apiKey: CHAVE_YOUTUBE_API,
+                          videoId: video.id,
+                          autoPlay: true,
+                          fullScreen: true,
+                          appBarColor: Colors.white);
                     },
                     //Vou retornar numa coluna
                     child: Column(
