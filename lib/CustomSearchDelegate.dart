@@ -46,7 +46,7 @@ class CustomSearchDelegate extends SearchDelegate<String> {
     /*
     List<String> lista = List();
     if (query.isNotEmpty) {
-      lista = ["Braulio", "Eliezer", "Gonza", "Yago"]
+      lista = ["Anair", "Eliezer", "Gonza", "Yago"]
           .where((texto) => texto.toLowerCase().startsWith(query.toLowerCase()))
           .toList();
 

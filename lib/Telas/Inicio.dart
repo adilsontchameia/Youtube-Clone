@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:youtube/Telas/Api.dart';
 import 'package:youtube/model/Video.dart';
+import 'package:flutter_youtube/flutter_youtube.dart';
 
 class Inicio extends StatefulWidget {
   //String que sera recebida como pesquisa
@@ -46,26 +47,34 @@ class _InicioState extends State<Inicio> {
                   List<Video> videos = snapshot.data;
                   Video video = videos[index];
                   //Exibindo na tela
-                  //Vou retornar numa coluna
-                  return Column(
-                    children: [
-                      //Estrutura de Video
-                      Container(
-                        height: 200,
-                        decoration: BoxDecoration(
-                          image: DecorationImage(
-                            fit: BoxFit.cover,
-                            //Pegando imagem da internet
-                            image: NetworkImage(video.imagem),
+                  //Gesture detector para abrir os videos
+                  return GestureDetector(
+                    onTap: () {
+                      //Executar os videos
+                      FlutterYoutube.playYoutubeVideoById(
+                          apiKey: CHAVE_YOUTUBE_API, videoId: video.id);
+                    },
+                    //Vou retornar numa coluna
+                    child: Column(
+                      children: [
+                        //Estrutura de Video
+                        Container(
+                          height: 200,
+                          decoration: BoxDecoration(
+                            image: DecorationImage(
+                              fit: BoxFit.cover,
+                              //Pegando imagem da internet
+                              image: NetworkImage(video.imagem),
+                            ),
                           ),
                         ),
-                      ),
-                      //Retornar listagem dos titulos
-                      ListTile(
-                        title: Text(video.titulo),
-                        subtitle: Text(video.descricao),
-                      )
-                    ],
+                        //Retornar listagem dos titulos
+                        ListTile(
+                          title: Text(video.titulo),
+                          subtitle: Text(video.descricao),
+                        )
+                      ],
+                    ),
                   );
                 },
                 separatorBuilder: (context, index) => Divider(
