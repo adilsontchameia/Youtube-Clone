@@ -25,7 +25,7 @@ class _InicioState extends State<Inicio> {
     //Instanciar API, para executar no app
 
     return FutureBuilder<List<Video>>(
-      future: _listarVideos(widget.pesquisa),
+      future: _listarVideos(""),
       builder: (context, snapshot) {
         switch (snapshot.connectionState) {
           case ConnectionState.none:

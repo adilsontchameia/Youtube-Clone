@@ -41,11 +41,12 @@ class CustomSearchDelegate extends SearchDelegate<String> {
   @override
   Widget buildSuggestions(BuildContext context) {
     print("Resultado digitado: " + query);
-    List<String> lista = List.empty();
+    List<String> lista = List();
     if (query.isNotEmpty) {
       lista = ["Braulio", "Eliezer", "Gonza", "Yago"]
-          //WHERE vai pegar os resultados, comparar se comeca com uma letra do texto
-          .where((texto) => texto.startsWith(query)).toList();
+          .where((texto) => texto.toLowerCase().startsWith(query.toLowerCase()))
+          .toList();
+
       return ListView.builder(
         itemCount: lista.length,
         itemBuilder: (context, index) {
